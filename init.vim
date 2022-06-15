@@ -11,6 +11,7 @@ Plug  'kyazdani42/nvim-tree.lua'
 Plug  'junegunn/fzf', {'do': { -> fzf#install() } }
 Plug  'endel/vim-github-colorscheme'
 Plug 'jacoborus/tender.vim'
+Plug 'preservim/nerdtree'
 
 call plug#end()
 
@@ -93,5 +94,10 @@ set softtabstop=0
 set expandtab
 set shiftwidth=4
 set incsearch
+
+nnoremap <leader>t :NERDTree<CR>
+
+" Start NERDTree and put the cursor back in the other window.
+autocmd VimEnter * NERDTree | wincmd p
 
 abbrev retrun return
